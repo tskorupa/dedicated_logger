@@ -2,9 +2,11 @@ class DedicatedLogger < Logger
 
   def initialize logger_name, filename, options={}
     @logger_name = logger_name
-    log_dir = options[:log_dir] || "log"
 
-		super File.absolute_path("#{filename}.log", log_dir)
+    log_dir = File.absolute_path(options[:log_dir] || "log")
+    FileUtils.mkdir_p(log_dir) unless File.exists? log_dir
+
+    super File.join(log_dir, "#{filename}.log")
   end
 
   def format_message severity, timestamp, progname, msg
