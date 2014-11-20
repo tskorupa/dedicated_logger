@@ -1,3 +1,6 @@
+require 'logger'
+require 'fileutils'
+
 class DedicatedLogger < Logger
 
   def initialize logger_name, filename, options={}

@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.authors       = ['Tomasz Skorupa']
   s.files         = `git ls-files`.split($/)
   s.require_paths = ['lib']
+
+  s.required_ruby_version = '>= 1.9.3'
 end
