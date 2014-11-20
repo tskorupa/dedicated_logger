@@ -6,7 +6,11 @@ Used for any ruby class, perhaps running as background tasks, in desperate need 
 Installation
 -----------
 
-    TODO
+    gem install dedicated_logger
+    
+or by including this line in your Gemfile
+
+    gem "dedicated_logger", :git => "git://github.com/tskorupa/dedicated_logger.git"
 
 Usage
 -----
