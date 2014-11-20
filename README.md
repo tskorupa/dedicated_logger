@@ -39,3 +39,9 @@ Usage
         @logger ||= DedicatedLogger.new(self, "test")
       end
     end
+
+TODO
+================
+
+* Add tests
+* convert to acts_as_* module
