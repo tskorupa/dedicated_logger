@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = 'dedicated_logger'
-  s.version       = '0.0.3'
+  s.version       = '0.0.4'
   s.description   = %q{Output formatter for the ruby Logger class}
   s.summary       = %q{Standardize the logged output for background tasks and store it in a dedicated file}
   s.authors       = ['Tomasz Skorupa']

@@ -3,13 +3,14 @@ require 'fileutils'
 
 class DedicatedLogger < Logger
 
-  def initialize logger_name, filename, options={}
+  def initialize logger_name, filepath, options={}
     @logger_name = logger_name
+    filename = File.basename filepath
+    dir_path = File.dirname(File.absolute_path(filepath))
 
-    log_dir = File.absolute_path(options[:log_dir] || "log")
-    FileUtils.mkdir_p(log_dir) unless File.exists? log_dir
+    FileUtils.mkdir_p(dir_path) unless File.exists? dir_path
 
-    super File.join(log_dir, "#{filename}.log")
+    super File.join(dir_path, filename)
   end
 
   def format_message severity, timestamp, progname, msg

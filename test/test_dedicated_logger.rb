@@ -4,7 +4,7 @@ require 'dedicated_logger'
 class DedicatedLoggerTest < MiniTest::Unit::TestCase
 
   def setup
-    @logger = DedicatedLogger.new("TEST", "test")
+    @logger = DedicatedLogger.new("TEST", "test/log/test.log")
   end
 
   def test_instantiation
