@@ -18,6 +18,7 @@ Usage
     require 'dedicated_logger'
     
     class Foo
+      include DedicatedLogger
       
       def self.bar
         logger.info "info from class method"
@@ -33,19 +34,10 @@ Usage
         logger.fatal "fatal"
       end
       
-      private
-      
-      def logger
-        self.class.logger
-      end
-      
-      def self.logger
-        @logger ||= DedicatedLogger.new(self, "test")
-      end
     end
 
 TODO
 ================
 
-* Add tests
-* convert to acts_as_* module
+* write docs on how to use acts_as_* module
+* show how to specify a custom logger file and/or filepath
