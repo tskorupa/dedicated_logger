@@ -12,15 +12,14 @@ module DedicatedLogger
   end
 
   module ClassMethods
-    def acts_as_dedicated_logger options={}
+    def acts_as_dedicated_logger options = {}
       name = options[:name] || self.name.to_s.underscore
-      filepath = options[:filepath] || File.join("log", "#{name}.log")
+      filepath = options[:filepath] || File.join('log', "#{name}.log")
       @logger = DedicatedLogger::Base.new(name, filepath)
     end
 
     def logger
       @logger || acts_as_dedicated_logger
     end
-
   end
 end

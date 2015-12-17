@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'dedicated_logger'
 
 class DedicatedLoggerTest < Minitest::Test
-
   DummyClass = Class.new
   DummyClassWithIncludedModule = Class.new(DummyClass) { include DedicatedLogger }
 
@@ -25,5 +24,4 @@ class DedicatedLoggerTest < Minitest::Test
   def test_dummy_class_with_module_defines_logger_method
     assert_kind_of DedicatedLogger::Base, DummyClassWithIncludedModule.logger
   end
-
 end
